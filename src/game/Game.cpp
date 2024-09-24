@@ -5,15 +5,35 @@
 
 Game::Game(int boardWidth, int boardHeight) 
     : board(boardWidth, boardHeight),
-      currentPiece(static_cast<Izmino::Shape>(rand() % 7)),
+      currentPiece(static_cast<Izmino::Shape>(Random::getInt(0, 6))),
+      nextPiece(static_cast<Izmino::Shape>(Random::getInt(0, 6))),  // Initialize nextPiece
       renderer(),
       inputHandler(),
       level(1),
-      dropInterval(1000)  // Start with 1 second interval
+      dropInterval(1000)
 {
+    Random::init();
     setupInputCallbacks();
     spawnNewPiece();
     lastDropTime = std::chrono::steady_clock::now();
+}
+
+void Game::spawnNewPiece() {
+    currentPiece = nextPiece;
+    generateNextPiece();
+    
+    int startX = board.getWidth() / 2 - currentPiece.getSize().second / 2;
+    currentPiece.setPosition(startX, 0);
+    
+    if (!board.isValidMove(currentPiece, startX, 0)) {
+        // Game over condition
+        renderer.renderGameOver();
+        exit(0);
+    }
+}
+
+void Game::generateNextPiece() {
+    nextPiece = Izmino(static_cast<Izmino::Shape>(Random::getInt(0, 6)));
 }
 
 void Game::run() {

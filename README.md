@@ -50,3 +50,64 @@ Steps:
 To do: 
 - add tests
 - comments to the code
+
+
+
+#### review below: 
+
+1. src/board/
+Board.hpp
+Board.cpp
+Status: Implemented, but might need refinement for line clearing and scoring.
+src/izmino/
+Izmino.hpp
+Izmino.cpp
+Status: Implemented, but might need additional methods for rotation and collision detection.
+src/game/
+Game.hpp
+Game.cpp
+Status: Partially implemented. Might need refinement for game loop, level progression, and game over conditions.
+src/renderer/
+ConsoleRenderer.hpp
+ConsoleRenderer.cpp
+Status: Basic implementation, but might need enhancements for better visual representation.
+src/input/
+InputHandler.hpp
+InputHandler.cpp
+Status: Basic implementation, but might need refinement for smoother input handling.
+src/utils/
+Random.hpp
+Random.cpp
+Status: Implemented.
+Areas that might need attention:
+Main Game Loop:
+Ensure there's a proper game loop in Game::run() that handles updates, rendering, and input processing.
+Collision Detection:
+Make sure there's robust collision detection in the Board class.
+Piece Locking:
+Implement logic to lock pieces in place when they can't move down further.
+Line Clearing:
+Ensure the line clearing logic in the Board class is fully implemented and tested.
+Scoring System:
+Refine the scoring system, possibly adding bonuses for multiple line clears.
+Level Progression:
+Implement a system to increase difficulty (speed) as the player clears more lines.
+Game Over Condition:
+Ensure there's a proper game over check and handling.
+Pause Functionality:
+Consider adding a pause feature.
+High Score:
+Think about implementing a high score system.
+Main Function:
+Ensure there's a main.cpp file that initializes and runs the game.
+Additional considerations:
+Error Handling:
+Add more robust error handling throughout the codebase.
+Comments and Documentation:
+Ensure all classes and methods are well-commented for maintainability.
+3. Testing:
+Consider adding unit tests for critical components like piece rotation, collision detection, and line clearing.
+Configuration:
+Consider adding a configuration system for easily adjusting game parameters.
+Sound Effects:
+If desired, plan for how you might incorporate sound effects.

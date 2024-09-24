@@ -8,11 +8,16 @@
 /** 
  * @class Board
  * @brief Represents the game board and handles game logic.
- * Things like: checking if a move is valid, placing a piece, clearing lines, 
+ * Things like: checking if a move is valid, placing a piece, removing lines, 
+ * getting the score, and getting the grid.
  */
 class Board {
 public:
-// Constructor with default width and height
+    /** 
+     * @brief Constructor with default width and height.
+     * @param width The width of the board.
+     * @param height The height of the board.
+     */
     Board(int width = 10, int height = 20);
     
     /** 

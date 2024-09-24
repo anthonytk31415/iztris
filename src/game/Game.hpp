@@ -3,6 +3,7 @@
 #include "../izmino/Izmino.hpp"
 #include "../renderer/ConsoleRenderer.hpp"
 #include "../input/InputHandler.hpp"
+#include "../utils/Random.hpp"
 
 class Game {
 public:
@@ -12,8 +13,10 @@ public:
 private:
     Board board;
     Izmino currentPiece;
+    Izmino nextPiece;
     ConsoleRenderer renderer;
     InputHandler inputHandler;
+
 
     int level;
     int dropInterval;  // in milliseconds
@@ -24,4 +27,5 @@ private:
     void setupInputCallbacks();
     void spawnNewPiece();
     void increaseDifficulty();
+    void generateNextPiece();
 };
