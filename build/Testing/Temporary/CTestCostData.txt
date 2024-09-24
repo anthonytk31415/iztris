@@ -1,0 +1,2 @@
+Random number generation 1 0.00955233
+---
