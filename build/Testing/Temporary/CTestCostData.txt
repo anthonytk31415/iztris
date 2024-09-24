@@ -1,2 +1,6 @@
-Random number generation 1 0.00955233
+Random 0 0
+Random 0 0
+Random 0 0
+Random 0 0
+Random number generation 1 0.00535308
 ---

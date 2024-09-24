@@ -1,23 +1,23 @@
-Start testing: Sep 24 12:08 PDT
+Start testing: Sep 24 12:45 PDT
 ----------------------------------------------------------
 1/1 Testing: Random number generation
 1/1 Test: Random number generation
 Command: "/Users/anthonytk/Desktop/coding/repos/iztris/build/tests" "Random number generation"
 Directory: /Users/anthonytk/Desktop/coding/repos/iztris/build
-"Random number generation" start time: Sep 24 12:08 PDT
+"Random number generation" start time: Sep 24 12:45 PDT
 Output:
 ----------------------------------------------------------
 Filters: Random number generation
-Randomness seeded to: 3473418816
+Randomness seeded to: 763361922
 ===============================================================================
-All tests passed (200 assertions in 1 test case)
+All tests passed (600 assertions in 1 test case)
 
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"Random number generation" end time: Sep 24 12:08 PDT
+"Random number generation" end time: Sep 24 12:45 PDT
 "Random number generation" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 24 12:08 PDT
+End testing: Sep 24 12:45 PDT
