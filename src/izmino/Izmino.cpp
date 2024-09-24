@@ -30,7 +30,13 @@ void Izmino::setPosition(int x, int y) {
 std::pair<int, int> Izmino::getPosition() const {
     return {x, y};
 }
-
+/**
+ * The getSize() method is designed to return the dimensions of the bounding box that contains the Izmino piece. 
+ * This is useful for:
+    - Collision detection
+    Rendering the piece on the game board
+    Calculating rotations and movements
+ */
 void Izmino::initializeShape() {
     switch (shape) {
         case Shape::I:

@@ -1,7 +1,8 @@
 #pragma once
 #include "../board/Board.hpp"
 #include "../izmino/Izmino.hpp"
-// #include "../renderer/ConsoleRenderer.hpp"
+#include "../renderer/ConsoleRenderer.hpp"
+#include "../input/InputHandler.hpp"
 
 class Game {
 public:
@@ -11,10 +12,10 @@ public:
 private:
     Board board;
     Izmino currentPiece;
-    // ConsoleRenderer renderer;
-    // Add more members as needed
+    ConsoleRenderer renderer;
+    InputHandler inputHandler;
 
-    void handleInput();
     void update();
     void render();
+    void setupInputCallbacks();
 };

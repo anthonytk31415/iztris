@@ -4,13 +4,22 @@
 
 class Board {
 public:
-    Board(int width, int height);
-    bool isValidMove(const Izmino& izmino, int x, int y) const;
-    void placeTetromino(const Izmino& izmino, int x, int y);
+    Board(int width = 10, int height = 20);
+    
+    bool isValidMove(const Izmino& piece, int x, int y) const;
+    void placePiece(const Izmino& piece);
     void clearLines();
-    // Add more methods as needed
+    int getWidth() const;
+    int getHeight() const;
+    const std::vector<std::vector<int>>& getGrid() const;
+    int getScore() const;
 
 private:
     std::vector<std::vector<int>> grid;
-    // Add more members as needed
+    int width;
+    int height;
+    int score;
+
+    bool isLineComplete(int y) const;
+    void removeLine(int y);
 };
