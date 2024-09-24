@@ -44,3 +44,9 @@ Steps:
 11. (Optional) Enhance graphics:
     - If you want to go beyond console graphics, consider using a simple graphics library like SDL2 or SFML  
 
+
+
+
+To do: 
+- add tests
+- comments to the code

@@ -5,12 +5,15 @@
 
 Game::Game(int boardWidth, int boardHeight) 
     : board(boardWidth, boardHeight),
-      currentPiece(static_cast<Izmino::Shape>(rand() % 7)),  // Random initial piece
+      currentPiece(static_cast<Izmino::Shape>(rand() % 7)),
       renderer(),
-      inputHandler()
+      inputHandler(),
+      level(1),
+      dropInterval(1000)  // Start with 1 second interval
 {
     setupInputCallbacks();
     spawnNewPiece();
+    lastDropTime = std::chrono::steady_clock::now();
 }
 
 void Game::run() {
@@ -23,9 +26,27 @@ void Game::run() {
 }
 
 void Game::update() {
-    // Game logic here
-    // For example: move the current piece down
-    // If it can't move down, lock it in place and spawn a new piece
+    auto now = std::chrono::steady_clock::now();
+    if (std::chrono::duration_cast<std::chrono::milliseconds>(now - lastDropTime).count() >= dropInterval) {
+        // Move piece down
+        auto [x, y] = currentPiece.getPosition();
+        if (board.isValidMove(currentPiece, x, y + 1)) {
+            currentPiece.setPosition(x, y + 1);
+        } else {
+            board.placePiece(currentPiece);
+            spawnNewPiece();
+            increaseDifficulty();
+        }
+        lastDropTime = now;
+    }
+}
+
+
+void Game::increaseDifficulty() {
+    if (board.getLinesCleared() / 10 + 1 > level) {
+        level++;
+        dropInterval = std::max(100, 1000 - (level - 1) * 100);  // Decrease interval, but not below 100ms
+    }
 }
 
 void Game::render() {

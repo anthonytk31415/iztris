@@ -6,7 +6,7 @@
 
 class Game {
 public:
-    Game();
+    Game(int boardWidth = 10, int boardHeight = 20);
     void run();
 
 private:
@@ -15,7 +15,13 @@ private:
     ConsoleRenderer renderer;
     InputHandler inputHandler;
 
+    int level;
+    int dropInterval;  // in milliseconds
+    std::chrono::steady_clock::time_point lastDropTime;
+
     void update();
     void render();
     void setupInputCallbacks();
+    void spawnNewPiece();
+    void increaseDifficulty();
 };
