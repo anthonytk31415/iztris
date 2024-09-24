@@ -49,8 +49,8 @@ Steps:
 
 To do: 
 - add tests
-- comments to the code
-
+- comments to the code (DONE)
+- do package manager stuff. 
 
 
 #### review below: 
@@ -111,3 +111,14 @@ Configuration:
 Consider adding a configuration system for easily adjusting game parameters.
 Sound Effects:
 If desired, plan for how you might incorporate sound effects.
+
+
+
+Testing: 
+
+Install the Catch2 testing framework.
+Set up your build system (e.g., CMake) to compile and run the tests.
+Create a main test file that includes the Catch2 main function.
+
+
+
