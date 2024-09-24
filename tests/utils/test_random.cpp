@@ -15,4 +15,32 @@ TEST_CASE("Random number generation", "[random]") {
     }
 
     // Add more test cases for your Random class here
+
+    SECTION("Generate random float within range") {
+        float min = 1.0f;
+        float max = 10.0f;
+        for (int i = 0; i < 100; ++i) {
+            float result = Random::getFloat(min, max);
+            REQUIRE(result >= min);
+            REQUIRE(result <= max);
+        }
+    }
+
+    SECTION("Generate random boolean with probability") {
+        float trueProbability = 1.0f;
+        for (int i = 0; i < 100; ++i) {
+            bool result = Random::getBool(trueProbability);
+            REQUIRE(result == true);
+        }
+    }
+
+    SECTION("Generate random boolean with probability") {
+        float trueProbability = 0.0f;
+        for (int i = 0; i < 100; ++i) {
+            bool result = Random::getBool(trueProbability);
+            REQUIRE(result == false);
+        }
+    }
+    // do we want to add some sort of test for the probability for the bernoulli distribution? TBD
+
 }

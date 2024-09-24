@@ -114,7 +114,7 @@ If desired, plan for how you might incorporate sound effects.
 
 
 
-Testing: 
+# Testing: 
 
 Install the Catch2 testing framework.
 Set up your build system (e.g., CMake) to compile and run the tests.
@@ -122,3 +122,27 @@ Create a main test file that includes the Catch2 main function.
 
 
 
+
+# Running the file: 
+using cmake 
+vcpkg
+
+to run: 
+git clone https://github.com/username/iztris.git 
+
+
+Install CMake
+brew install cmake
+
+run cmake in the build folder: 
+cmake .. 
+
+run the executable: 
+./iztris
+
+
+to add more tests: 
+make your tests
+go to build folder
+run cmake --build
+then run ctest in the same folder
